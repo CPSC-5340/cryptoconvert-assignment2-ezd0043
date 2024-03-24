@@ -28,11 +28,7 @@ class CurrencyConverterViewModel : ObservableObject {
     }
     
     func findIndex(card: ConvertModel<CurrencyItemModel>) -> Int? {
-        for index in 0..<listOfCards.count {
-            if card.id == listOfCards[index].id {
-                return index
-            }
-        }
-        return 0
+        listOfCards.firstIndex(where: { $0.id == card.id })
     }
+
 }
